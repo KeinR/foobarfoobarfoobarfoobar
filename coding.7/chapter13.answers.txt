@@ -1,0 +1,24 @@
+/*********************************************
+Your name: Orion Musselman
+Question 2: About 16,000 in system, and roughly 1,200 free. This checks. Most is 
+being used for cache. "Free" is underutilized memory.
+Question 4: It changes by the megabytes I give memory-user. That memory returns 
+when I kill the process. They match my expectations. When I use large amounts of 
+memory, my system will likely crash due to how I have it configured (no swap 
+Linux machine, something unpredictable will happen). Don't go running around 
+assuming everyone has a system with fault tolerance to daze a sysadmin.
+Question 6: I got the process IDs with pgrep. `pgrep firefox`, `pgrep bash`, 
+`pgrep sway`
+Question 7: It looks like there are libraries and other processes as a part of 
+the program. Sway, which is launched from bash, looksl ike it has some bash 
+address in it. It also looks like the segments have permissions, sizes, and a 
+host of other attributes to them. There are also data files, such as font files 
+and such.
+Question 8: The memory map is very simple. It looks like it is using the libc 
+and linux shared libraries, and the rest is stack, "anonymous" and some specific 
+to the process. One section, designated read write, looks like it is the segment 
+that contains the massive array. The massive array also is very "dirty," perhaps 
+indicating that it is constantly being modified and thus cannot be cached. Yes, 
+it matches my expectations.
+*********************************************/
+
